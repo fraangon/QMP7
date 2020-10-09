@@ -2,10 +2,11 @@
 
 ### Como usuarie de QueMePongo quiero ver todas las prendas que tengo en mi guardarropas desde el navegador para poder administrarlas
 
-get https://macowins-server.herokuapp.com/prendas
-
-Rta: 
+GET https://macowins-server.herokuapp.com/prendas
+ 
 ```Json
+Rta:
+
 [
   {
     "id": 1,
@@ -37,88 +38,49 @@ Rta:
     "tipo": "pantalon",
     "talle": 40
   },
-  {
-    "id": 7,
-    "tipo": "pantalon",
-    "talle": 41
-  },
-  {
-    "id": 8,
-    "tipo": "pantalon",
-    "talle": 42
-  },
-  {
-    "id": 9,
-    "tipo": "pantalon",
-    "talle": 43
-  },
-  {
-    "id": 10,
-    "tipo": "pantalon",
-    "talle": 44
-  },
-  {
-    "id": 11,
-    "tipo": "remera",
-    "talle": "XS"
-  },
-  {
-    "id": 12,
-    "tipo": "remera",
-    "talle": "S"
-  },
-  {
-    "id": 13,
-    "tipo": "remera",
-    "talle": "M"
-  },
-  {
-    "id": 14,
-    "tipo": "remera",
-    "talle": "L"
-  },
-  {
-    "id": 15,
-    "tipo": "remera",
-    "talle": "XL"
-  },
-  {
-    "id": 16,
-    "tipo": "saco",
-    "talle": "XS"
-  },
-  {
-    "id": 17,
-    "tipo": "saco",
-    "talle": "S"
-  },
-  {
-    "id": 18,
-    "tipo": "saco",
-    "talle": "M",
-    "enStock": false
-  },
-  {
-    "id": 19,
-    "tipo": "saco",
-    "talle": "L"
-  },
-  {
-    "id": 20,
-    "tipo": "saco",
-    "talle": "XL"
-  }
+  etc...
 ]
 ```
 
 ### Como usuario de QueMePongo, quiero crear una prenda desde el navegador
 
-
+POST 'https://macowins-server.herokuapp.com/prendas/'
+```Json
+{
+  "id": 30,
+  "tipo": "pantalon",
+  "talle": "XXL"
+}
+```
 
 ### Como usuarie de QueMePongo quiero ver una prenda en particular que tengo en mi guardarropas para poder editarla
 
+GET https://macowins-server.herokuapp.com/prendas?id=200
+
+```Json 
+Rta:
+  [
+  {
+    "id": 30,
+    "tipo": "pantalon",
+    "talle": "XXL"
+  }
+]
+```
+
 ### Como usuarie de QueMePongo, quiero poder eliminar una prenda de mi guardarropas
+
+DELETE https://macowins-server.herokuapp.com/prendas?id=200
 
 ### Como usuarie de QueMePongo, quiero poder ver mis eventos para administrarlos
 
+GET https://macowins-server.herokuapp.com/eventos
+
 ### Como usuarie de QueMePongo, quiero poder abrir las sugerencias de prendas para un evento  en mi navegador
+
+GET https://macowins-server.herokuapp.com/sugerencias
+```Json
+{
+  "id_evento": 300
+}
+```
